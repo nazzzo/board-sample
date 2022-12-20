@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ boardItem.number }}번째 글입니다</title>
+</head>
+
+<body>
+    <h1><a href="/board">로고</a></h1>
+    <form action="" id="viewFrm">
+        <div id="article">
+            <div id="article-info">
+                <div>
+                    <span>제목 : </span>
+                    <span class="article_subject">{{ boardItem.subject }}</span>
+                </div>
+                <div>
+                    <span>작성자 : </span>
+                    <span class="article_writer">{{ boardItem.writer }}</span>
+                </div>
+                <!-- <span>번호 : </span>
+                <span class="article_number">{{ boardItem.number }}</span> -->
+                <span>작성일 : </span>
+                <span class="article_date">{{ boardItem.date }}</span>
+                <span>조회수 : </span>
+                <span class="article_hit">{{ boardItem.hit }}</span>
+            </div>
+            <div>
+                <span>내용 : </span>
+                <span class="article_content">{{ boardItem.content }}</span>
+            </div>
+        </div>
+    </form>
+    <div class="btnBox">
+        <form action="/board/delete" method="post">
+            <button type="button" class="prev">이전 글</button>
+            <button type="button" class="next">다음 글</button>
+            <button type="button" class="modify"><a href="/board/gallery/modify?index={{ boardItem.idx }}">수정하기</a></button>
+            <button type="submit" class="delete" name="delete">삭제하기</button>
+            <button type="button" class="list">목록 보기(<span class="total_article">{{ boardList.length }}</span>)</button>
+        </form>
+    </div>
+    <script src="/js/view.js"></script>
+</body>
+
+</html>
