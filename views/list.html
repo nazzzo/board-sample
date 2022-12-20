@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="/css/index.css">
+</head>
+
+<body>
+  <div id="wrap">
+    <table>
+      <thead>
+        <tr>
+          <td class="th index">번호</td>
+          <td class="th subject">제목</td>
+          <td class="th writer">작성자</td>
+          <td class="th date">등록일</td>
+          <td class="th hit">조회수</td>
+        </tr>
+      </thead>
+      <tbody>
+        {% for boardItem in boardList %}
+        <tr>
+          <td>{{ loop.length - loop.index0 }}</td>
+          <td><a href='./view?index={{ loop.length - loop.index0 - 1 }}'>{{ boardItem.subject }}</a></td>
+          <td>{{ boardItem.writer }}</td>
+          <td class="timeLine">{{ boardItem.date }}</td>
+          <td>{{ boardItem.hit }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    <div id="btnBox">
+      <p>현재 <span class="total_article">{{ boardList.length }}</span>개의 글이 있습니다</p>
+      <p style="display: none;"><span class="search_result">{{ boardList.length }}개의 검색결과</span></p>      
+      <div class="pageMove prev"><button>＜prev</button></div>
+      <ul class="paging">
+
+      </ul>
+      <div class="pageMove next"><button>next＞</button></div>
+      <div class="goWrite"><button><a href="/write">글쓰기</a></button></div>
+    </div>
+    <div id="searchBox">
+      <form action="/list" method="get">
+        <select name="searchType" id="searchType">
+          <option value="writer">작성자</option>
+          <option value="subject">제목</option>
+          <option value="content">내용</option>
+          <input name="search" type="text">
+        </select>
+        <button type="submit">검색</button>
+      </form>
+    </div>
+  </div>
+  <script src="/js/list.js"></script>
+</body>
+
+</html>
