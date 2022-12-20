@@ -8,7 +8,7 @@ const totalNumber = totalList.textContent;
 
 function prevHandler(e) {
   if (index > 0) {
-    window.location.href = `http://127.0.0.1:3000/view?index=${
+    window.location.href = `http://127.0.0.1:3000/board/z-board/view?index=${
       Number(index) - 1
     }`;
   } else {
@@ -18,7 +18,7 @@ function prevHandler(e) {
 
 function nextHandler(e) {
   if (index < totalNumber - 1) {
-    window.location.href = `http://127.0.0.1:3000/view?index=${
+    window.location.href = `http://127.0.0.1:3000/board/z-board/view?index=${
       Number(index) + 1
     }`;
   } else {
@@ -31,7 +31,7 @@ next.addEventListener("click", nextHandler);
 
 listBtn.addEventListener("click", (e) => {
   console.log(2);
-  window.location.href = `http://127.0.0.1:3000/list?index=0`;
+  window.location.href = `http://127.0.0.1:3000/board/z-board/list?index=0`;
 });
 
 

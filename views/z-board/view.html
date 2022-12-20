@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <h1><a href="/">로고</a></h1>
+    <h1><a href="/board">로고</a></h1>
     <form action="" id="viewFrm">
         <div id="article">
             <div id="article-info">
@@ -35,10 +35,10 @@
         </div>
     </form>
     <div class="btnBox">
-        <form action="/delete" method="post">
+        <form action="/board/delete" method="post">
             <button type="button" class="prev">이전 글</button>
             <button type="button" class="next">다음 글</button>
-            <button type="button" class="modify"><a href="/modify?index={{ boardItem.idx }}">수정하기</a></button>
+            <button type="button" class="modify"><a href="/board/z-board/modify?index={{ boardItem.idx }}">수정하기</a></button>
             <button type="submit" class="delete" name="delete">삭제하기</button>
             <button type="button" class="list">목록 보기(<span class="total_article">{{ boardList.length }}</span>)</button>
         </form>

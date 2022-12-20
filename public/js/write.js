@@ -22,5 +22,5 @@ writeFrm.addEventListener("submit", submitHandler);
 const cancelBtn = document.querySelector(".cancel")
 
 cancelBtn.addEventListener("click", (e)=>{
-  window.location.href = `http://127.0.0.1:3000/list?index=0`;
+  window.location.href = `http://127.0.0.1:3000/board/z-board/list?index=0`;
 })

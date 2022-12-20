@@ -20,7 +20,7 @@ function pageTemplate() {
   let pageArr = [];
   for (let i = 0; i < lastPage; i++) {
     pageArr.push(
-      `<a href="http://127.0.0.1:3000/list?index=${i}" class="pageMove">${
+      `<a href="http://127.0.0.1:3000/board/z-board/list?index=${i}" class="pageMove">${
         i + 1
       }</a>`
     );
@@ -32,14 +32,14 @@ paging.innerHTML += pageTemplate().join("");
 function prevHandler(e) {
   if (pageIndex > 0) {
     location.href =
-      "http://127.0.0.1:3000/list?index=" + (Number(pageIndex) - 1);
+      "http://127.0.0.1:3000/board/z-board/list?index=" + (Number(pageIndex) - 1);
   } else return alert("최신 페이지입니다.");
 }
 
 function nextHandler(e) {
   if (pageIndex < lastPage - 1) {
     location.href =
-      "http://127.0.0.1:3000/list?index=" + (Number(pageIndex) + 1);
+      "http://127.0.0.1:3000/board/z-board/list?index=" + (Number(pageIndex) + 1);
   } else return alert("마지막 페이지입니다.");
 }
 prev.addEventListener("click", prevHandler);

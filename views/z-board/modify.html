@@ -7,9 +7,9 @@
     <title>Document</title>
 </head>
 <body>
-    <h1><a href="/">로고</a></h1>
+    <h1><a href="/board">로고</a></h1>
     <h1>수정하기</h1>
-    <form action="/modify?index={{ index }}" id="modifyFrm" method="post">
+    <form action="/board/z-board/modify?index={{ index }}" id="modifyFrm" method="post">
         <div>
             <span>제목</span>
             <input type="text" name="subject" value="{{ boardItem.subject }}">

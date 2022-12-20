@@ -25,7 +25,7 @@
         {% for boardItem in boardList %}
         <tr>
           <td>{{ loop.length - loop.index0 }}</td>
-          <td><a href='./view?index={{ loop.length - loop.index0 - 1 }}'>{{ boardItem.subject }}</a></td>
+          <td><a href='/board/z-board/view?index={{ loop.length - loop.index0 - 1 }}'>{{ boardItem.subject }}</a></td>
           <td>{{ boardItem.writer }}</td>
           <td class="timeLine">{{ boardItem.date }}</td>
           <td>{{ boardItem.hit }}</td>
@@ -41,10 +41,10 @@
 
       </ul>
       <div class="pageMove next"><button>next＞</button></div>
-      <div class="goWrite"><button><a href="/write">글쓰기</a></button></div>
+      <div class="goWrite"><button><a href="/board/z-board/write">글쓰기</a></button></div>
     </div>
     <div id="searchBox">
-      <form action="/list" method="get">
+      <form action="/board/z-board/list" method="get">
         <select name="searchType" id="searchType">
           <option value="writer">작성자</option>
           <option value="subject">제목</option>
