@@ -3,7 +3,6 @@ const nunjucks = require("nunjucks");
 const router = require("./routes")
 const app = express();
 const PORT = process.env.SERVER_PORT || 3000;
-let boardList = [];
 
 app.set("view engine", "html");
 nunjucks.configure("views", {
