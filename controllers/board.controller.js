@@ -17,26 +17,25 @@ exports.getList = (req, res) => {
 }
 
 exports.getWrite = (req, res)=>{
-    console.log('getwrite실행')
-    res.render("/z-board/write.html");
+    res.render("z-board/write.html");
 }
 
 exports.getView = (req, res)=>{
     const index = req.query.index;
     if (index < 0 || index >= boardList.length) {
       // 에러 방지용 빈 페이지 띄우기
-      return res.render("/z-board/view.html", { boardItem: {} });
+      return res.render("z-board/view.html", { boardItem: {} });
     }
     const boardItem = boardList[index];
     boardItem.hit += 1;
-    res.render("/z-board/view.html", { boardItem, boardList });
+    res.render("z-board/view.html", { boardItem, boardList });
 }
 
 exports.getModify = (req, res) =>{
     const index = req.query.index;
     const boardItem = boardList[index];
 
-    res.render("/z-board/modify.html", { boardItem, index });
+    res.render("z-board/modify.html", { boardItem, index });
 }
 
 exports.postList = (req, res)=>{
